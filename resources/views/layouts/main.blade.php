@@ -19,7 +19,7 @@
 
 @include('layouts.navbar')
 
-<body>
+<body style="background-color: #c9c7c7">
     <div class="container">
         @yield('content')
     </div>
@@ -31,4 +31,5 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.flexslider-min.js"></script>
 <script src="https://js.stripe.com/v2/"></script>
+
 </html>

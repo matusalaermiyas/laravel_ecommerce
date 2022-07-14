@@ -19,7 +19,8 @@
     </div>
 
     <div class="row">
-        <form action="{{route('root.add-product')}}" method="post" class="col-sm-7 col-sm-offset-1" enctype="multipart/form-data">
+        <form action="{{ route('root.add-product') }}" method="post" class="col-sm-7 col-sm-offset-1"
+            enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Product Name</label>
@@ -55,9 +56,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" class="form-control" required>
-                Nice product
-            </textarea>
+                <textarea name="description" id="description" class="form-control" required>Nice product </textarea>
             </div>
 
             <div class="form-group">

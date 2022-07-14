@@ -52,7 +52,7 @@ class AdminController extends Controller
 
         session()->put('is_admin', true);
 
-        return redirect('/');
+        return redirect()->route('root.paid-customers');
     }
 
     public function addProduct()

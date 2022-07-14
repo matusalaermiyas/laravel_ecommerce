@@ -17,6 +17,12 @@
                         <th>Phone Number</th>
                         <th>Region</th>
                         <th>Kebele</th>
+
+                        @if ($status)
+                            <th>Delivery</th>
+                        @endif
+
+
                         <th></th>
                     </tr>
                 </thead>
@@ -27,8 +33,19 @@
                             <td>{{ $customer->phone }}</td>
                             <td>{{ $customer->region }}</td>
                             <td>{{ $customer->kebele }}</td>
+                            @if ($status)
+                                <td>
+                                    @if ($customer->delivered)
+                                        <span class="glyphicon glyphicon-ok"></span>
+                                        Delivered
+                                    @else
+                                        <span class="glyphicon glyphicon-time"></span>
+                                        Pending
+                                    @endif
+                                </td>
+                            @endif
                             <td>
-                                <a href="{{route('customer.orders', $customer->id)}}">Watch orders</a>
+                                <a href="{{ route('customer.orders', $customer->id) }}">Watch orders</a>
                             </td>
                         </tr>
                     @endforeach

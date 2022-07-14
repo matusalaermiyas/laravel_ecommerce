@@ -17,58 +17,58 @@
             @if (Session::has('is_admin'))
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Admin
+                        Admin (Click here)
                         <b class="caret"></b>
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('root.paid-customers')}}">
+                        <li><a href="{{ route('root.paid-customers') }}">
                                 Paid customers
                             </a></li>
-                        <li><a href="{{route('root.unpaid-customers')}}">
+                        <li><a href="{{ route('root.unpaid-customers') }}">
                                 Unpaid customers
                             </a></li>
 
-                        <li><a href="{{route('root.add-product')}}">
+                        <li><a href="{{ route('root.add-product') }}">
                                 Add product
-                        </a></li>
+                            </a></li>
 
-                        <li><a href="{{route('admin.logout')}}">
+                        <li><a href="{{ route('admin.logout') }}">
                                 Logout
-                        </a></li>
+                            </a></li>
                     </ul>
                 </li>
             @endif
 
             @if (Session::has('customer_logged'))
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {{ Session::get('customer_name') }}
-                    <b class="caret"></b>
-                </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{ Session::get('customer_name') }}
+                        <b class="caret"></b>
+                    </a>
 
-                <ul class="dropdown-menu">
-                    <li><a href="{{route('customer.dashboard')}}">
-                            Dashboard
-                        </a></li>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ route('customer.dashboard') }}">
+                                Dashboard
+                            </a></li>
 
-                    <li><a href="{{route('customer.logout')}}">
-                            Logout
-                    </a></li>
-                </ul>
-            </li>
+                        <li><a href="{{ route('customer.logout') }}">
+                                Logout
+                            </a></li>
+                    </ul>
+                </li>
             @else
-            <li><a href="{{route('customer.login')}}">Login | Register</a></li>
+                <li><a href="{{ route('customer.login') }}">Login | Register</a></li>
             @endif
 
-            
-            <li><a href="{{route('clothes.tshirts')}}">
+
+            <li><a href="{{ route('clothes.tshirts') }}">
                     T-shirts
                 </a></li>
-            <li><a href="{{route('clothes.trousers')}}">Trousers</a></li>
-            <li><a href="{{route('clothes.shorts')}}">Shorts</a></li>
-            <li><a href="{{route('clothes.underwears')}}">Underwears</a></li>
-            <li><a href="{{route('clothes.checkout')}}">
+            <li><a href="{{ route('clothes.trousers') }}">Trousers</a></li>
+            <li><a href="{{ route('clothes.shorts') }}">Shorts</a></li>
+            <li><a href="{{ route('clothes.underwears') }}">Underwears</a></li>
+            <li><a href="{{ route('clothes.checkout') }}">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                     {{ count(session('cart', [])) }}
                 </a></li>

@@ -26,6 +26,8 @@ class CustomerController extends AdminController
     {
         $grid = new Grid(new Customer());
 
+        $grid->quickSearch('customer_name');
+
         $grid->column('id', __('Id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -33,7 +35,8 @@ class CustomerController extends AdminController
         $grid->column('phone', __('Phone'));
         $grid->column('region', __('Region'));
         $grid->column('kebele', __('Kebele'));
-        $grid->column('payed', __('Payed'));
+        $grid->column('delivered', __('Delivered'));
+        $grid->column('payed', __('Payed'))->filter();
 
         return $grid;
     }
@@ -55,6 +58,7 @@ class CustomerController extends AdminController
         $show->field('phone', __('Phone'));
         $show->field('region', __('Region'));
         $show->field('kebele', __('Kebele'));
+        $show->field('delivered', __('Delivered'));
         $show->field('payed', __('Payed'));
 
         return $show;
@@ -73,6 +77,7 @@ class CustomerController extends AdminController
         $form->mobile('phone', __('Phone'));
         $form->text('region', __('Region'));
         $form->text('kebele', __('Kebele'));
+        $form->text('delivered', __('Delivered'));
         $form->switch('payed', __('Payed'));
 
         return $form;

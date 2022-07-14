@@ -4,9 +4,10 @@
 
 @section('content')
     <h1 style="font-size: 30px">Welcome to Fendi</h1>
-    <p style="color: skyblue; font-style: italic">We of offer the following items in our clothe's site</p>
+    <p style="color: #fff; font-style: italic; font-size: 20px">We of offer the following items in our clothe's site</p>
 
-    <p style="color: skyblue; font-style: italic">In order to track your orders it's better if you create an account
+    <p style="color: #fff; font-style: italic; font-size: 20px">In order to track your orders it's better if you create an
+        account
     </p>
 
     <div class="flexslider">

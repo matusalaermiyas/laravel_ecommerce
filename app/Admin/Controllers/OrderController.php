@@ -26,6 +26,8 @@ class OrderController extends AdminController
     {
         $grid = new Grid(new Order());
 
+        $grid->quickSearch('item_name');
+
         $grid->column('id', __('Id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
